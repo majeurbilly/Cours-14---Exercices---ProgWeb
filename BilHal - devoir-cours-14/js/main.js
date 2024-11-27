@@ -3,7 +3,8 @@ const motDePasse = document.getElementById("motDePasse");
 const confirmationMotDePasse = document.getElementById('confirmation')
 const messageErreur = document.getElementById("messageErreur");
 const voirMotDePasse = document.getElementById("voirMotDePasse");
-
+const number1 = document.getElementById("chiffre_1");
+const number2 = document.getElementById("chiffre_2");
 formulaireInscription.onsubmit = ValiderFormulaire;
 voirMotDePasse.onchange = BasculerMotDePasse;
 
@@ -54,18 +55,38 @@ function ValiderConfirmationMotPasse() {
 
     return estValide;
 }
+function IsFourteen(number1, number2) {
+
+    let valueNumber1 = parseInt(number1);
+    let valueNumber2 = parseInt(number2);
+
+    if ((valueNumber1 + valueNumber2) !== 14) {
+        return false;
+    }
+    else {
+        return true;
+    }
+    // or return (valueNumber1 + valueNumber2) === 14;
 
 function ValiderFormulaire(evenement) {
     let nbChampsInvalides = 0;
 
+    if (!IsFourteen){
+        ++nbChampsInvalides;
+        messageErreur.textContent = "La somme des nombres doit être égale à 14.";
+        number1.classList.add('border-danger');
+        number2.classList.add('border-danger');
+    }
+    else{
+        number1.classList.remove('border-danger');
+        number2.classList.remove('border-danger');
+    }
     if (!ValiderMotPasse()) {
         ++nbChampsInvalides;
     }
-
     if (!ValiderConfirmationMotPasse()) {
         ++nbChampsInvalides;
     }
-
     if (nbChampsInvalides !== 0) {
         messageErreur.classList.remove('d-none');
         evenement.preventDefault();
@@ -73,4 +94,8 @@ function ValiderFormulaire(evenement) {
         messageErreur.classList.add('d-none');
         alert('Formulaire envoyé')
     }
-} 
+
+
+}
+
+}

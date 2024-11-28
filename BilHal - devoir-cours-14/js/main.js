@@ -70,7 +70,7 @@ function IsFourteen() {
     // or return (valueNumber1 + valueNumber2) === 14;
 
 
-    function ValiderFormulaire(evenement) {
+    function ValiderFormulaire(evenment) {
         let nbChampsInvalides = 0;
         if (!IsFourteen()) {
             ++nbChampsInvalides;

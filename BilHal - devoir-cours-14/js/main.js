@@ -17,7 +17,7 @@ function BasculerMotDePasse() {
         confirmationMotDePasse.type = "password";
     }
 }
- 
+
 function ContientMajuscule(texte) {
     return texte.toLocaleLowerCase() !== texte;
 }
@@ -32,10 +32,10 @@ function ValiderMotPasse() {
 
     if (!ContientChiffre(motDePasse.value) || !ContientMajuscule(motDePasse.value)) {
         motDePasse.classList.add('border-danger');
-        messageErreur.textContent = 'Le mot de passe doit contenir une majuscule et un chiffre. ';
+        messageErreur.textContent += 'Le mot de passe doit contenir une majuscule et un chiffre. ';
     } else {
         motDePasse.classList.remove('border-danger');
-        messageErreur.textContent = '';
+        messageErreur.textContent += '';
         estValide = true;
     }
 
@@ -55,47 +55,44 @@ function ValiderConfirmationMotPasse() {
 
     return estValide;
 }
-function IsFourteen(number1, number2) {
 
-    let valueNumber1 = parseInt(number1);
-    let valueNumber2 = parseInt(number2);
+function IsFourteen() {
 
-    if ((valueNumber1 + valueNumber2) !== 14) {
+    var valueNumber1 = parseInt(number1.value);
+    var valueNumber2 = parseInt(number2.value);
+
+    if ((valueNumber1 + valueNumber2) == 14) {
+        return true;
+    } else {
         return false;
     }
-    else {
-        return true;
-    }
+}
     // or return (valueNumber1 + valueNumber2) === 14;
 
-function ValiderFormulaire(evenement) {
-    let nbChampsInvalides = 0;
 
-    if (!IsFourteen){
-        ++nbChampsInvalides;
-        messageErreur.textContent = "La somme des nombres doit être égale à 14.";
-        number1.classList.add('border-danger');
-        number2.classList.add('border-danger');
-    }
-    else{
-        number1.classList.remove('border-danger');
-        number2.classList.remove('border-danger');
-    }
-    if (!ValiderMotPasse()) {
-        ++nbChampsInvalides;
-    }
-    if (!ValiderConfirmationMotPasse()) {
-        ++nbChampsInvalides;
-    }
-    if (nbChampsInvalides !== 0) {
-        messageErreur.classList.remove('d-none');
-        evenement.preventDefault();
-    } else {
-        messageErreur.classList.add('d-none');
-        alert('Formulaire envoyé')
-    }
+    function ValiderFormulaire(evenement) {
+        let nbChampsInvalides = 0;
+        if (!IsFourteen()) {
+            ++nbChampsInvalides;
+            number1.classList.add('border-danger');
+            number2.classList.add('border-danger');
+            messageErreur.textContent += "La somme des nombres doit être égale à 14.";
+        } else {
+            number1.classList.remove('border-danger');
+            number2.classList.remove('border-danger');
+        }
+        if (!ValiderMotPasse()) {
+            ++nbChampsInvalides;
+        }
+        if (!ValiderConfirmationMotPasse()) {
+            ++nbChampsInvalides;
+        }
+        if (nbChampsInvalides !== 0) {
+            messageErreur.classList.remove('d-none');
+            evenement.preventDefault();
+        } else {
+            messageErreur.classList.add('d-none');
+            alert('Formulaire envoyé')
+        }
 
-
-}
-
-}
+    }

@@ -31,19 +31,12 @@ function ValiderFormulaire_exercice2(evenment) {
 }
 function CheckBoxIsValid() {
     let temp = 0;
-    if (belize.value !== null)
+    if (!belize.checked && !bonaire.checked && !grandTurk.checked)
     {
         temp++;
     }
-    else if (bonaire.value !== null)
-    {
-        temp++;
-    }
-    else if (grandTurk.value !== null)
-    {
-        temp++;
-    }
-    else if (temp !== 0)
+
+    if (temp !== 0)
     {
         return false;
     }

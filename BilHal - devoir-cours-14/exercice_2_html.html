@@ -9,23 +9,21 @@
     <title>GoBleu</title>
 </head>
 <body>
+
+<!-- Header -->
+<div class="container-fluid text-center">
+    <header>
+        <!-- Titre -->
+        <div>
+            <h1>GoBleu</h1>
+        </div>
+    </header>
+</div>
+
 <div class="container-fluid">
     <form action="" id="formulaireInscription" class="formulaireInscription row" method="post">
-
-
-        <!-- Header -->
-        <div class="text-center">
-            <header>
-                <!-- Titre -->
-                <div>
-                    <h1>GoBleu</h1>
-                </div>
-            </header>
-        </div>
-
-
         <!-- Formulaire -->
-        <div class="container-fluid text-center">
+        <div class="text-center">
             <h2>Contactez-nous</h2>
             <div class="row">
 
@@ -93,27 +91,30 @@
                 </div>
 
                 <!-- Sites (boutons checkbox) -->
-                <div class="row" id="checkboxDiv">
+                <div class="row">
                     <div class="col-12 col-md-4 text-md-end">
                         <label class="form-label">Sites :</label>
                     </div>
                     <div class="col-12 col-md-8 text-start">
 
-                        <input class="form-check-input" type="checkbox" name="sites" id="belize"
-                               value="belize">
+                        <input class="form-check-input" type="checkbox" name="sites" id="belize" value="belize">
                         <label class="form-check-label" for="belize">Belize</label>
 
 
-                        <input class="form-check-input" type="checkbox" name="sites" id="bonaire"
-                               value="bonaire">
+                        <input class="form-check-input" type="checkbox" name="sites" id="bonaire" value="bonaire">
                         <label class="form-check-label" for="bonaire">Bonaire</label>
 
 
                         <input class="form-check-input" type="checkbox" name="sites" id="grandturk" value="grandturk">
                         <label class="form-check-label" for="grandturk">Grandturk</label>
 
+                        <div class="alert alert-danger d-none col-md-4 offset-md-3" id="messageErreur">
+
+                        </div>
+
                     </div>
                 </div>
+        </div>
                 <!-- Commentaires -->
                 <div class="row">
                     <div class="col-12 col-md-4 text-md-end">
@@ -136,7 +137,6 @@
                 </div>
 
             </footer>
-        </div>
     </form>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

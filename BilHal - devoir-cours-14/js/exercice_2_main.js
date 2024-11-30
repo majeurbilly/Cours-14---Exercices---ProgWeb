@@ -4,7 +4,6 @@ const grandTurk = document.getElementById("grandturk");
 const formulaireInscription = document.getElementById("formulaireInscription");
 const messageErreur = document.getElementById("messageErreur");
 formulaireInscription.onsubmit = ValiderFormulaire_exercice2;
-const all = (belize, bonaire, grandTurk).required
 
 function ValiderFormulaire_exercice2(evenment) {
     let nbChampsInvalides = 0;

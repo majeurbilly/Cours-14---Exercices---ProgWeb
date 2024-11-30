@@ -80,6 +80,7 @@ function IsFourteen() {
         } else {
             number1.classList.remove('border-danger');
             number2.classList.remove('border-danger');
+            messageErreur.textContent = "";
         }
         if (!ValiderMotPasse()) {
             ++nbChampsInvalides;
@@ -89,7 +90,7 @@ function IsFourteen() {
         }
         if (nbChampsInvalides !== 0) {
             messageErreur.classList.remove('d-none');
-            evenement.preventDefault();
+            evenment.preventDefault();
         } else {
             messageErreur.classList.add('d-none');
             alert('Formulaire envoyé')

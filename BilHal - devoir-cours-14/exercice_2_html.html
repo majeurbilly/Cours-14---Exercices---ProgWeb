@@ -95,7 +95,7 @@
                     <div class="col-12 col-md-4 text-md-end">
                         <label class="form-label">Sites :</label>
                     </div>
-                    <div class="col-12 col-md-8 text-start">
+                    <form class="col-12 col-md-8 text-start" id="formulaireInscriptionExercice2">
 
                         <input class="form-check-input" type="checkbox" name="sites" id="belize" value="belize">
                         <label class="form-check-label" for="belize">Belize</label>
@@ -108,35 +108,34 @@
                         <input class="form-check-input" type="checkbox" name="sites" id="grandturk" value="grandturk">
                         <label class="form-check-label" for="grandturk">Grandturk</label>
 
-                        <div class="alert alert-danger d-none col-md-4 offset-md-3" id="messageErreur">
-
-                        </div>
+                    </form>
+                    <div class="alert alert-danger d-none col-md-4 offset-md-3" id="messageErreur">
 
                     </div>
                 </div>
-        </div>
-                <!-- Commentaires -->
-                <div class="row">
-                    <div class="col-12 col-md-4 text-md-end">
-                        <label class="form-label">Commentaire :</label>
-                    </div>
-                    <div class="col-12 col-md-4 text-start">
-                        <textarea class="form-control" id="commentaires" name="commentaires" rows="5"></textarea>
-                    </div>
-                </div>
-
-                <div class="col-12 text-center">
-                    <button type="submit" class="btn btn-primary">Envoyer</button>
-                </div>
-
             </div>
-            <footer>
-                <div class="container-fluid text-center pt-5">
-                    <h3>© Billy Hallé - Technique de l'informatique</h3>
-                    <h4>Cégep de Sainte-foy - Formation continue</h4>
+            <!-- Commentaires -->
+            <div class="row">
+                <div class="col-12 col-md-4 text-md-end">
+                    <label class="form-label">Commentaire :</label>
                 </div>
+                <div class="col-12 col-md-4 text-start">
+                    <textarea class="form-control" id="commentaires" name="commentaires" rows="5"></textarea>
+                </div>
+            </div>
 
-            </footer>
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+            </div>
+
+        </div>
+        <footer>
+            <div class="container-fluid text-center pt-5">
+                <h3>© Billy Hallé - Technique de l'informatique</h3>
+                <h4>Cégep de Sainte-foy - Formation continue</h4>
+            </div>
+
+        </footer>
     </form>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

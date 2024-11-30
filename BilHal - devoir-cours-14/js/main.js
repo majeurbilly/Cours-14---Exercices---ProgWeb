@@ -61,7 +61,7 @@ function IsFourteen() {
     var valueNumber1 = parseInt(number1.value);
     var valueNumber2 = parseInt(number2.value);
 
-    if ((valueNumber1 + valueNumber2) == 14) {
+    if ((valueNumber1 + valueNumber2) === 14) {
         return true;
     } else {
         return false;

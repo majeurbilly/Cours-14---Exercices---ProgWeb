@@ -35,7 +35,7 @@ function CheckBoxIsValid() {
         temp++;
     }
 
-    if (temp !== 0)
+    else if (temp !== 0)
     {
         return false;
     }

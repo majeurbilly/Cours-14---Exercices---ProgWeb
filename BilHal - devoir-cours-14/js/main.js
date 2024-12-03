@@ -47,7 +47,7 @@ function ValiderConfirmationMotPasse() {
 
     if (motDePasse.value !== confirmationMotDePasse.value) {
         confirmationMotDePasse.classList.add('border-danger');
-        messageErreur.textContent += 'Les mots de passe doivent être identiques.'
+        messageErreur.textContent += 'Les mots de passe doivent être identiques. '
     } else {
         confirmationMotDePasse.classList.remove('border-danger');
         estValide = true;
@@ -76,7 +76,7 @@ function IsFourteen() {
             ++nbChampsInvalides;
             number1.classList.add('border-danger');
             number2.classList.add('border-danger');
-            messageErreur.textContent += "La somme des nombres doit être égale à 14.";
+            messageErreur.textContent += "La somme des nombres doit être égale à 14. ";
         } else {
             number1.classList.remove('border-danger');
             number2.classList.remove('border-danger');
